@@ -9,6 +9,7 @@
     "check-types": "bunx --bun tsc --noEmit",
     "lint": "bunx --bun eslint --cache",
     "lint:fix": "bunx --bun eslint --cache --fix",
+    "lint:inspect": "bunx --bun eslint --inspect-config",
     "format": "bunx --bun prettier . --write --cache",
     "format:check": "bunx --bun prettier . --check",
     "check": "bun run check-types && bun run lint && bun run format:check",
