@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import tanStackRouter from "@tanstack/eslint-plugin-router";
 import prettier from "eslint-config-prettier";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -7,7 +8,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist/", "routeTree.gen.ts"]),
   {
     name: "core-config",
     files: ["**/*.{ts,tsx}"],
@@ -24,8 +25,23 @@ export default defineConfig([
         projectService: true,
         tsconfigRootDir: import.meta.dirname
       }
+    },
+    rules: {
+      "@typescript-eslint/only-throw-error": [
+        "error",
+        {
+          allow: [
+            {
+              from: "package",
+              package: "@tanstack/router-core",
+              name: "Redirect"
+            }
+          ]
+        }
+      ]
     }
   },
+  ...tanStackRouter.configs["flat/recommended"],
   {
     name: "prettier",
     ...prettier

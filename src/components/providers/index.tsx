@@ -1,10 +1,12 @@
+import { RouterProvider } from "@tanstack/react-router";
 import { ThemeProvider } from "@/components/providers/theme";
 import { Toaster } from "@/components/ui/sonner";
+import { router } from "@/lib/router";
 
-function Providers({ children }: { children: React.ReactNode }) {
+function Providers() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      {children}
+      <RouterProvider router={router} />
       <Toaster closeButton richColors position="top-center" />
     </ThemeProvider>
   );
