@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
+    "convex:dev": "bun run --bun convex dev",
+    "convex:once": "bun run --bun convex dev --once",
+    "convex:codegen": "bun run --bun convex codegen",
     "check-types": "bunx --bun tsc --noEmit",
     "lint": "bunx --bun eslint --cache",
     "lint:fix": "bunx --bun eslint --cache --fix",
