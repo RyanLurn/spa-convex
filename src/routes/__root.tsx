@@ -1,4 +1,4 @@
-import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignIn, UserButton } from "@clerk/clerk-react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { AuthLoading, Authenticated, Unauthenticated } from "convex/react";
 import { LoadingSpinner } from "@/components/utils/loading-spinner";
@@ -6,7 +6,9 @@ import { LoadingSpinner } from "@/components/utils/loading-spinner";
 const RootLayout = () => (
   <div className="h-screen w-screen">
     <Unauthenticated>
-      <SignInButton />
+      <div className="flex size-full items-center justify-center">
+        <SignIn />
+      </div>
     </Unauthenticated>
     <Authenticated>
       <div className="fixed top-4 right-4">
