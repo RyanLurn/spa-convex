@@ -33,7 +33,13 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "backend/*": ["./*"]
+    }
   },
   "include": ["./**/*"],
   "exclude": ["./_generated"]
