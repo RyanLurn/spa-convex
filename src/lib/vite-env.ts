@@ -4,7 +4,8 @@ import * as z from "zod";
 const viteEnv = createEnv({
   clientPrefix: "VITE_",
   client: {
-    VITE_CONVEX_URL: z.url()
+    VITE_CONVEX_URL: z.url(),
+    VITE_CLERK_PUBLISHABLE_KEY: z.string()
   },
   runtimeEnv: import.meta.env
 });
