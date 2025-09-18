@@ -1,7 +1,10 @@
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+
 function App() {
   return (
-    <div>
-      <h1>App</h1>
+    <div className="flex min-h-svh flex-col items-center justify-center">
+      <Button onClick={() => toast.info("Hello")}>Click me</Button>
     </div>
   );
 }
