@@ -2,10 +2,10 @@ import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function LoadingSpinner({
-  dataName,
+  message = "Loading, please wait...",
   isFullScreen = true
 }: {
-  dataName?: string;
+  message?: string;
   isFullScreen?: boolean;
 }) {
   return (
@@ -17,7 +17,7 @@ function LoadingSpinner({
     >
       <Loader2 className="h-10 w-10 animate-spin text-primary sm:h-12 sm:w-12" />
       <p className="text-lg font-medium text-muted-foreground sm:text-xl">
-        Loading{dataName ? " " + dataName : ""}, please wait...
+        {message}
       </p>
     </div>
   );

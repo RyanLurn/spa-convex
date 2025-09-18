@@ -9,11 +9,13 @@ const RootLayout = () => (
       <SignInButton />
     </Unauthenticated>
     <Authenticated>
-      <UserButton />
+      <div className="fixed top-4 right-4">
+        <UserButton />
+      </div>
       <Outlet />
     </Authenticated>
     <AuthLoading>
-      <LoadingSpinner />
+      <LoadingSpinner message="Authenticating, please wait..." />
     </AuthLoading>
   </div>
 );
