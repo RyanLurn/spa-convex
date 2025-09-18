@@ -1,18 +1,9 @@
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 
 const RootLayout = () => (
-  <>
-    <div className="flex gap-2 p-2">
-      <Link to="/" className="[&.active]:font-bold">
-        Home
-      </Link>{" "}
-      <Link to="/about" className="[&.active]:font-bold">
-        About
-      </Link>
-    </div>
-    <hr />
+  <div className="h-screen w-screen">
     <Outlet />
-  </>
+  </div>
 );
 
 export const Route = createRootRoute({ component: RootLayout });
