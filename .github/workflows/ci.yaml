@@ -32,5 +32,11 @@ jobs:
       - name: Install dependencies with Bun
         run: bun install
 
-      - name: Check code quality
-        run: bun run check
+      - name: Check types
+        run: bun run check-types
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Check format
+        run: bun run format:check
